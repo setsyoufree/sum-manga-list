@@ -1,0 +1,28 @@
+manga_list = {"Drifters": 16, "One Piece": 100, "Ranger Reject": 40, "Rent A Girlfriend": 4}
+
+f = "Gundam"
+g = '00' 
+
+manga_list[f] = g
+#adds new but fancy 
+manga_list["One Piece"] = 150
+#edits current entry value
+manga_list["Kingdom"] = 50
+#adds new entry
+del manga_list["Rent A Girlfriend"]
+#del entry
+
+titles = list(manga_list)
+#def this into something shorter
+
+print(manga_list["Drifters"])
+print(manga_list["One Piece"])
+print(manga_list["Kingdom"])
+print(titles)
+#prints all the "key" 
+for key, value in manga_list.items():
+    print(key)
+#prints all the key only vertically    
+for key, value in manga_list.items():
+    print(key, value)
+#prints all the things vertically 
