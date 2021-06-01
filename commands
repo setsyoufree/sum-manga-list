@@ -1,6 +1,8 @@
 manga_list = {"Drifters": 16, "One Piece": 100, "Ranger Reject": 40, "Rent A Girlfriend": 4}
 #new/edit/update command
 txt = "$new#Drifters#35"
+tet = "$check#Ranger Reject#35"
+tes = "$del#One Piece"
 if txt.startswith("$new"):
  f = txt.split("#")[1]
  g = txt.split("#")[2]
@@ -12,4 +14,41 @@ if tes.startswith("$del"):
  h = tes.split("#")[1]
  del manga_list[h]
 
+if tet.startswith("$check"):
+ i = tet.split("#")[1]
+ print("You have read", i, "until chapter", (manga_list[i]))
+#print result "You have read Ranger Reject until chapter 40"
+
 print(manga_list)
+manga_list = {"Drifters": 16, "One Piece": 100, "Ranger Reject": 40, "Rent A Girlfriend": 4}
+tes = "$del#One Piece"
+txt = "$new#Drifters#35"
+tet = "$check#Rent A Girlfriend"
+end = "$ended#Rent A Girlfriend"
+k = "finished"
+
+if txt.startswith("$new"):
+ f = txt.split("#")[1]
+ g = txt.split("#")[2]
+ manga_list[f] = g
+
+if tes.startswith("$del"):
+ h = tes.split("#")[1]
+ del manga_list[h]
+ 
+if end.startswith("$ended"):
+ j = end.split("#")[1]
+ manga_list[j] = k
+
+if tet.startswith("$check"):
+ i = tet.split("#")[1]
+ l = manga_list[i]
+ if (i) in manga_list and (l) != k:
+  print("Yes, you have read", i, "until chapter", (manga_list[i]))
+ else:
+  print("You have finished reading", i)
+ #else:
+  #print("You have read", i, "until chapter", (manga_list[i])) 
+
+for key, value in manga_list.items():
+ print(key, value)
