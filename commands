@@ -1,0 +1,15 @@
+manga_list = {"Drifters": 16, "One Piece": 100, "Ranger Reject": 40, "Rent A Girlfriend": 4}
+#new/edit/update command
+txt = "$new#Drifters#35"
+if txt.startswith("$new"):
+ f = txt.split("#")[1]
+ g = txt.split("#")[2]
+ manga_list[f] = g
+ 
+#del command
+tes = "$del#One Piece"
+if tes.startswith("$del"):
+ h = tes.split("#")[1]
+ del manga_list[h]
+
+print(manga_list)
